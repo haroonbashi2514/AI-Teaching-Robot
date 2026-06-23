@@ -1,82 +1,160 @@
-# AI Teaching Robot
+# 🤖 AI Teaching Robot
 
-Zoro is a classroom teaching robot system with a laptop-based AI backend and a Raspberry Pi Zero 2 W edge node. The laptop handles AI, voice, RAG, attendance, perception, and the dashboard. The Pi connects the physical robot hardware: USB camera, microphone, speaker, display face, and motor driver.
+An AI-powered classroom teaching assistant that combines Computer Vision, Voice AI, and Retrieval-Augmented Generation (RAG) to create an intelligent learning companion for classrooms.
 
-![Dashboard Preview](docs/screenshots/dashboard.png)
+This project was built to demonstrate how multiple AI technologies can work together in a single real-world educational system.
 
-## Features
+---
 
-- Live classroom camera dashboard
-- Streaming voice agent with STT, AI response generation, and TTS playback
-- Syllabus upload and RAG-based teaching mode
-- 3-second attendance scan and periodic attendance support
-- Student transcript storage
-- Classroom behavior and rule monitoring
-- Camera-based obstacle awareness
-- Manual WASD motor control and voice movement commands
-- Raspberry Pi edge services for camera, mic, speaker, display face, and motors
+## 🚀 Features
 
-## Architecture
+- 👤 Face Recognition based attendance
+- 🎤 Voice interaction with students
+- 🧠 RAG-powered syllabus question answering
+- 📚 Context-aware educational responses
+- 👁️ Real-time object detection
+- 🔊 Text-to-Speech responses
+- 🎧 Speech-to-Text interaction
+- 📷 Raspberry Pi camera integration
+- ⚡ Fast AI inference pipeline
 
-```text
-Browser Dashboard
-        |
-        v
-Laptop FastAPI Backend
-  - AI / RAG / voice pipeline
-  - attendance and perception
-  - dashboard API
-        |
-        v
-Raspberry Pi Zero 2 W Edge Agent
-  - USB camera
-  - USB microphone
-  - USB speaker
-  - HDMI/touch display face
-  - L298N motor driver
+---
+
+## 🏗️ System Architecture
+
+```
+Student
+   │
+   ▼
+Voice / Camera Input
+   │
+   ├──────────────► Face Recognition
+   │
+   ├──────────────► Object Detection
+   │
+   └──────────────► Speech-to-Text
+                        │
+                        ▼
+                  RAG Pipeline
+                        │
+         Retrieve Relevant Knowledge
+                        │
+                        ▼
+                     LLM
+                        │
+                        ▼
+                 Text-to-Speech
+                        │
+                        ▼
+                    Student
 ```
 
-## Repository Layout
+---
 
-```text
-laptop_backend/       Laptop AI backend and dashboard API
-pi_agent/             Raspberry Pi edge agent for hardware IO
-zoro_frontend/        React dashboard frontend
-pi_face_sync/         Lightweight robot face display page
-deploy/               Raspberry Pi systemd service templates
-scripts/              Helper startup scripts
-docs/                 Project docs and screenshots
-```
+## 🛠 Technologies Used
 
-## Environment
+### Programming
 
-Copy `.env.example` to `.env` and fill in your own API keys locally.
+- Python
 
-```powershell
-copy .env.example .env
-```
+### Artificial Intelligence
 
-Never commit `.env`, API keys, student photos, face data, attendance logs, transcripts, or uploaded syllabus files.
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- Prompt Engineering
 
-## Laptop Setup
+### Computer Vision
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements-laptop.txt
-```
+- OpenCV
+- Face Recognition
+- Object Detection
+
+### Voice AI
+
+- Speech-to-Text (STT)
+- Text-to-Speech (TTS)
+
+### Hardware
+
+- Raspberry Pi
+- Camera Module
+- Microphone
+- Speaker
+
+---
 
 
-## Raspberry Pi Setup
+## 🎯 Use Cases
 
-Install Pi dependencies:
+- Smart Classroom
+- AI Teaching Assistant
+- Automated Attendance
+- Interactive Learning
+- Educational Robotics
+- AI-powered Student Support
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements-pi.txt
+git clone https://github.com/haroonbashi2514/AI-Teaching-Robot.git
 ```
 
-## Safety
+Move into the project
 
-Test motors with the wheels off the ground first. Keep all API keys and student data outside git. This repository is source code only; runtime data belongs in local `data/` folders that are ignored by git.
+```bash
+cd AI-Teaching-Robot
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application
+
+```bash
+python main.py
+```
+
+---
+
+## 📸 Demo
+
+<img width="1919" height="904" alt="Screenshot 2026-05-02 210236" src="https://github.com/user-attachments/assets/038c7320-ebf3-4271-9f9a-09cf7d4db221" />
+
+Example:
+
+- Home Screen
+- Face Recognition
+- Voice Interaction
+- Question Answering
+- Attendance Detection
+
+---
+
+## 💡 Future Improvements
+
+- Multi-language support
+- Gesture recognition
+- Emotion detection
+- Classroom analytics dashboard
+- Cloud deployment
+- Multi-agent AI architecture
+
+---
+
+## 👨‍💻 Author
+
+Haroon Al Rashith A
+
+B.Tech Artificial Intelligence and Data Science
+
+- LinkedIn: https://linkedin.com/in/haroon-bashi
+- GitHub: https://github.com/haroonbashi2514
+
+---
