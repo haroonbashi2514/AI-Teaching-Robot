@@ -8,20 +8,6 @@ from typing import Any
 
 from .config import settings
 
-
-PROFANITY_PATTERNS = [
-    r"\bf+u+c+k+\w*\b",
-    r"\bs+h+i+t+\w*\b",
-    r"\bb+i+t+c+h+\w*\b",
-    r"\ba+s+s+h+o+l+e+\w*\b",
-    r"\bb+a+s+t+a+r+d+\w*\b",
-    r"\bd+a+m+n+\w*\b",
-    r"\bc+r+a+p+\w*\b",
-    r"\bm+o+r+o+n+\w*\b",
-    r"\bi+d+i+o+t+\w*\b",
-]
-
-
 BEHAVIOR_WEIGHTS = {
     "respectful": 2,
     "attentive": 1,
