@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": ["src/main.tsx", "src/app/**/*.ts", "src/app/**/*.tsx", "src/vite-env.d.ts"],
+  "exclude": ["src/app/components/ui/**"]
+}
