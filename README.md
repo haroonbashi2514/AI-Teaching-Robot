@@ -66,25 +66,6 @@ python -m venv .venv
 pip install -r requirements-laptop.txt
 ```
 
-Run the backend:
-
-```powershell
-python -m uvicorn laptop_backend.main:app --host 0.0.0.0 --port 8001
-```
-
-Run the frontend:
-
-```powershell
-cd zoro_frontend
-npm install
-npm run dev -- --host 0.0.0.0 --port 5173
-```
-
-Dashboard:
-
-```text
-http://127.0.0.1:5173
-```
 
 ## Raspberry Pi Setup
 
@@ -95,15 +76,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-pi.txt
 ```
-
-Run the Pi edge agent:
-
-```bash
-python3 -m uvicorn pi_agent.main:app --host 0.0.0.0 --port 8000
-python3 -m pi_agent.body_node
-```
-
-For boot startup, use the systemd templates in `deploy/`.
 
 ## Safety
 
